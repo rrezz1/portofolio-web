@@ -90,10 +90,19 @@ export const projects: Project[] = [
     slug: "desklite",
     title: "deskLite",
     description:
-      "Help desk platform with separate flows for customers, agents, and admins.",
+      "Capstone support-ticket system where customers raise issues, agents resolve them, and admins oversee the full queue.",
     longDescription:
-      "deskLite is a ticket-based support system. Customers can open and track requests, agents pick them up and reply, and admins manage users and overall settings. There are three demo videos below, one for each role.",
-    stack: ["Python", "FastAPI", "React", "SQL", "REST API"],
+      "deskLite is an internal help desk app I worked on as part of a five-person capstone team (my role was full-stack integration). Customers register, open tickets, add comments and attachments, and track status on their own requests. Agents pull work from a queue, update ticket status, and reply to assigned cases. Admins manage user roles, assign tickets to agents, and view workload metrics on a live dashboard. Access is split by role with strict permissions on the API so each user only sees what they are allowed to. The frontend is Next.js, React, TypeScript, and Tailwind. The backend is FastAPI with PostgreSQL for data and MinIO for file storage. The whole stack runs in Docker with CI through GitHub Actions. Below are three short demos: customer, agent, and admin views.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Docker",
+    ],
     videos: [
       { label: "Customer view", src: "/projects/desklite/customer.mp4" },
       { label: "Agent view", src: "/projects/desklite/agent.mp4" },
