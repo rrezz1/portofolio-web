@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Project } from "@/data/portfolio";
+import { projectHasVideo } from "@/data/portfolio";
 import TechStack from "./TechStack";
 
 type ProjectCardProps = {
@@ -17,8 +18,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="text-lg font-semibold text-zinc-900 group-hover:text-zinc-700">
             {project.title}
           </h3>
-          {project.video && (
-            <p className="text-xs text-zinc-400">Has video demo</p>
+          {projectHasVideo(project) && (
+            <p className="text-xs text-zinc-400">
+              {project.videos?.length
+                ? `${project.videos.length} demo videos`
+                : "Has video demo"}
+            </p>
           )}
         </div>
         <span

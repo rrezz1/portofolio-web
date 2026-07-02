@@ -12,6 +12,25 @@ type ProjectDetailProps = {
   project: Project;
 };
 
+function VideoPlayer({ src, title }: { src: string; title: string }) {
+  return (
+    <div className="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-950">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        className="aspect-video w-full"
+      >
+        <source src={src} type={videoMimeType(src)} />
+        Your browser does not support video playback.
+      </video>
+      <p className="border-t border-zinc-800 px-4 py-2 text-sm text-zinc-400">
+        {title}
+      </p>
+    </div>
+  );
+}
+
 export default function ProjectDetail({ project }: ProjectDetailProps) {
   return (
     <div className="min-h-screen bg-white">
@@ -34,22 +53,25 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
           <p className="mt-2 text-zinc-600">{project.description}</p>
         </div>
 
-        {project.video && (
+        {project.videos && project.videos.length > 0 && (
+          <section className="mb-10">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-400">
+              Demos
+            </h2>
+            <div className="flex flex-col gap-6">
+              {project.videos.map((item) => (
+                <VideoPlayer key={item.src} src={item.src} title={item.label} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {project.video && !project.videos?.length && (
           <section className="mb-10">
             <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-zinc-400">
               Demo
             </h2>
-            <div className="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-950">
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                className="aspect-video w-full"
-              >
-                <source src={project.video} type={videoMimeType(project.video)} />
-                Your browser does not support video playback.
-              </video>
-            </div>
+            <VideoPlayer src={project.video} title="Project demo" />
           </section>
         )}
 

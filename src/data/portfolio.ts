@@ -7,11 +7,16 @@ export type Project = {
   stack: string[];
   logo?: string;
   video?: string;
+  videos?: { label: string; src: string }[];
   links: {
     live?: string;
     github?: string;
   };
 };
+
+export function projectHasVideo(project: Project): boolean {
+  return Boolean(project.video || project.videos?.length);
+}
 
 export const profile = {
   name: "Rrezart Buzuku",
@@ -80,6 +85,22 @@ export const education = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "proj-9",
+    slug: "desklite",
+    title: "deskLite",
+    description:
+      "Help desk platform with separate flows for customers, agents, and admins.",
+    longDescription:
+      "deskLite is a ticket-based support system. Customers can open and track requests, agents pick them up and reply, and admins manage users and overall settings. There are three demo videos below, one for each role.",
+    stack: ["Python", "FastAPI", "React", "SQL", "REST API"],
+    videos: [
+      { label: "Customer view", src: "/projects/desklite/customer.mp4" },
+      { label: "Agent view", src: "/projects/desklite/agent.mp4" },
+      { label: "Admin view", src: "/projects/desklite/admin.mp4" },
+    ],
+    links: {},
+  },
   {
     id: "proj-1",
     slug: "poker-game",
