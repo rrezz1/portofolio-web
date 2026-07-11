@@ -212,6 +212,87 @@ export const projects: Project[] = [
     video: "/projects/kosovavikend/kosovavikend.mp4",
     links: {},
   },
+  {
+    id: "proj-10",
+    slug: "bike-mania-3d",
+    title: "Bike Mania 3D",
+    description:
+      "3D browser bike game built for web, with physics-based riding and level progression.",
+    longDescription:
+      "Bike Mania 3D is a browser game I worked on at Zonda Creative for Poki.com. The game runs in PlayCanvas with 3D models and physics handled through Ammo.js. I focused on smooth controls, level flow, and keeping performance solid in the browser using WebGL and modern rendering where supported.",
+    stack: [
+      "PlayCanvas",
+      "JavaScript",
+      "TypeScript",
+      "WebGL 2.0",
+      "WebGPU",
+      "HTML5",
+      "CSS",
+      "Ammo.js",
+    ],
+    video: "/projects/bike-mania-3d/bike-mania-3d.mp4",
+    links: {
+      live: "https://launch.playcanvas.com/2004851?debug=true",
+    },
+  },
+  {
+    id: "proj-11",
+    slug: "sticker-bliss",
+    title: "Sticker Bliss",
+    description:
+      "Casual sticker-matching browser game with a clean, responsive UI.",
+    longDescription:
+      "Sticker Bliss is a casual browser title built with PlayCanvas for Poki.com. Players work through sticker-based levels with simple, satisfying interactions. I handled gameplay logic in JavaScript and TypeScript, built the UI with HTML5 and CSS, and tuned rendering so it runs well across devices.",
+    stack: [
+      "PlayCanvas",
+      "JavaScript",
+      "TypeScript",
+      "WebGL 2.0",
+      "WebGPU",
+      "HTML5",
+      "CSS",
+      "Ammo.js",
+    ],
+    video: "/projects/sticker-bliss/sticker-bliss.mp4",
+    links: {
+      live: "https://launch.playcanvas.com/2150502?debug=true",
+    },
+  },
+  {
+    id: "proj-12",
+    slug: "fruit-blast",
+    title: "Fruit Blast",
+    description:
+      "Browser arcade game where you shoot fruits with a cannon to earn coins and upgrade your gear.",
+    longDescription:
+      "In Fruit Blast, players aim a cannon at fruits to clear them and collect coins. Those coins go toward upgrades that make each run stronger and more rewarding. Built with PlayCanvas, JavaScript, and TypeScript for Poki.com, with physics handled through Ammo.js where needed. Most of the work was on shooting feel, progression, and keeping the game smooth in the browser.",
+    stack: [
+      "PlayCanvas",
+      "JavaScript",
+      "TypeScript",
+      "WebGL 2.0",
+      "WebGPU",
+      "HTML5",
+      "CSS",
+      "Ammo.js",
+    ],
+    video: "/projects/fruit-blast/fruit-blast.mp4",
+    links: {
+      live: "https://launch.playcanvas.com/2089035",
+    },
+  },
+  {
+    id: "proj-13",
+    slug: "combo-block",
+    title: "Combo Block",
+    description:
+      "Mobile block puzzle game built in Unity with C# for Android and iOS.",
+    longDescription:
+      "Combo Block is a mobile puzzle game I developed in Unity using C#. I built the core block mechanics, UI flow, scoring, and level progression, then tested and polished the build before release on mobile. The focus was on tight gameplay loops and a smooth experience on both Android and iOS.",
+    stack: ["Unity", "C#"],
+    video: "/projects/combo-block/combo-block.mp4",
+    links: {},
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
